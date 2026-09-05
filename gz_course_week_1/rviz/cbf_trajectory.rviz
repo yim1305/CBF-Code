@@ -1,0 +1,77 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: odom
+    Frame Rate: 30
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Current View
+      Scale: 100
+      Angle: -1.5707963267948966
+      Target Frame: odom
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Color: 160; 160; 164
+      Plane Cell Count: 20
+      Cell Size: 1
+      Reference Frame: odom
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: true
+      Show Names: true
+      Marker Scale: 0.5
+    - Class: rviz_default_plugins/Odometry
+      Name: Odometry (ground truth)
+      Enabled: true
+      Topic:
+        Value: /ground_truth/odom
+      Position Tolerance: 0.05
+      Angle Tolerance: 0.05
+      Keep: 1
+      Shape:
+        Value: Arrow
+    - Class: rviz_default_plugins/Path
+      Name: Actual Trajectory
+      Enabled: true
+      Topic:
+        Value: /waypoint/actual_path
+      Color: 25; 255; 0
+      Line Style: Billboards
+      Line Width: 0.05
+    - Class: rviz_default_plugins/Marker
+      Name: Spiral Reference Path
+      Enabled: true
+      Topic:
+        Value: /spiral_tracker/reference_path
+    - Class: rviz_default_plugins/Marker
+      Name: Reference Point (target now)
+      Enabled: true
+      Topic:
+        Value: /spiral_tracker/reference_point
+    - Class: rviz_default_plugins/Marker
+      Name: CBF Boundary
+      Enabled: true
+      Topic:
+        Value: /cbf/boundary
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Walls
+      Enabled: true
+      Topic:
+        Value: /cbf/walls
+Window Geometry:
+  Height: 900
+  Width: 1400
+  X: 60
+  Y: 60
